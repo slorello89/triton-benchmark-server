@@ -16,7 +16,7 @@ echo \
      containerd.io \
      docker-compose-plugin
 
-git checkout https://github.com/triton-inference-server/server
+git clone https://github.com/triton-inference-server/server
 sh server/docs/examples/fetch_models.sh
 printf "\nresponse_cache{\n  enable:true\n}\n" >> server/docs/examples/model_repository/simple/config.pbtxt
 printf "\nresponse_cache{\n  enable:true\n}\n" >> server/docs/examples/model_repository/densenet_onnx/config.pbtxt
