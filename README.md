@@ -1,4 +1,4 @@
-# Benchmarking triton server
+# Benchmarking Triton Server
 
 On a GCP VM (minimum specs n-1-standard-4 with a NVIDIA T4 GPU, 30GB of storage)
 
