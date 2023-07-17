@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:  
+  triton-server:
+    deploy:
+        resources:
+          reservations:
+            devices:
+              - driver: nvidia
+                count: 1
+                capabilities: [gpu]
+    image: nvcr.io/nvidia/tritonserver:23.06-py3
+    command: tritonserver --cache-config local,size=1048576 --model-repository=/models
+    ports:
+      - '8000:8000'
+      - '8001:8001'
+      - '8002:8002'
+    volumes:
+      - ./server/docs/examples/model_repository:/models
