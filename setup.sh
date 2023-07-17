@@ -15,7 +15,10 @@ echo \
      docker-ce-cli \
      containerd.io \
      docker-compose-plugin
-
+sudo apt-get update
+sudo apt-get install -y nvidia-container-toolkit
+sudo nvidia-ctk runtime configure --runtime=docker
+sudo systemctl restart docker
 git clone https://github.com/triton-inference-server/server
 sh server/docs/examples/fetch_models.sh
 printf "\nresponse_cache{\n  enable:true\n}\n" >> server/docs/examples/model_repository/simple/config.pbtxt
