@@ -69,7 +69,7 @@ perf_analyzer -u your_host:port -m densenet_onnx
 
 ## Testing Redis cache
 
-Ensure that you have a separate VM running in the same sub-net / vpc reachable from your triton server instance.
+Ensure that you have a separate VM running in the same subnet / vpc reachable from your triton server instance.
 Take the host-name or IP along with the port of Redis and modify `docker-compose-redis.yml` to the correct values
 
 On your triton server machine run
