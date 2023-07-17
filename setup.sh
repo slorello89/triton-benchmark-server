@@ -20,6 +20,8 @@ sudo apt-get install -y nvidia-container-toolkit
 sudo nvidia-ctk runtime configure --runtime=docker
 sudo systemctl restart docker
 git clone https://github.com/triton-inference-server/server
-sh server/docs/examples/fetch_models.sh
+cd server/docs/examples/
+sh fetch_models.sh
+cd ../../../ 
 printf "\nresponse_cache{\n  enable:true\n}\n" >> server/docs/examples/model_repository/simple/config.pbtxt
 printf "\nresponse_cache{\n  enable:true\n}\n" >> server/docs/examples/model_repository/densenet_onnx/config.pbtxt
